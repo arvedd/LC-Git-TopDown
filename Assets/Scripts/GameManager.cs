@@ -5,7 +5,7 @@ namespace MyCode
     public class GameManager : MonoBehaviour
     {
         private static GameManager instance;
-        [SerializeField] GameObject activePlayer;
+        [SerializeField] public GameObject activePlayer;
         public GameObject playerPrefab;
 
         private void Awake()
@@ -25,10 +25,11 @@ namespace MyCode
             return instance;
         }
 
-         void Start()
+        void Start()
         {
             spawnPlayer();
         }
+
         private void spawnPlayer()
         {
             activePlayer = Instantiate(playerPrefab);

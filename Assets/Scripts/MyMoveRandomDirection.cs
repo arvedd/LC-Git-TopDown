@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MyMoveable))]
-public class NewMonoBehaviourScript : MonoBehaviour
+public class MyMoveRandomDirection : MonoBehaviour
 {
     private MyMoveable moveable;
     private void Awake()

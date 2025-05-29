@@ -24,7 +24,7 @@ public class MyMoveTowardPlayer : MonoBehaviour
     {
         Vector3 dir;
         dir = MyCode.GameManager.GetInstance().getPlayerPosition() - transform.position;
-        dir = dir.normalized; //normalisasi nilai min 1, max 1
+        dir = dir.normalized;
 
         return dir;
     }

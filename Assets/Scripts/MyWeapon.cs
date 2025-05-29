@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class MyWeapon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float fireRate;
+    private float timer = 0;
+    public MyPoolObjectType type;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        timer = timer - Time.deltaTime > 0 ? timer - Time.deltaTime : 0f;
+    }
+
+    public void shoot()
+    {
+        if (timer == 0f)
+    {
+        var obj = MyObjectPool.GetInstance()?.requestObject(type);
+        if (obj != null)
+        {
+            Debug.Log("fire!!");
+            obj.activate(transform.position, transform.rotation);
+            timer = fireRate;
+        }
+        else
+        {
+            Debug.LogWarning("No object available in pool of type " + type);
+        }
+    }
     }
 }

@@ -1045,7 +1045,7 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""SetDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -1053,10 +1053,10 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""79b8c956-45c1-48c1-9824-e355b4191a6f"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""SetDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -1078,7 +1078,7 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""SetDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true

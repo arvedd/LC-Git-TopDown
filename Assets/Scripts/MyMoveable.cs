@@ -11,7 +11,7 @@ public class MyMoveable : MonoBehaviour
         UpdatePosition();
     }
 
-    private void UpdatePosition()
+    void UpdatePosition()
     {
         transform.position = transform.position + direction * Time.deltaTime * speed;
     }
@@ -49,5 +49,9 @@ public class MyMoveable : MonoBehaviour
     {
         // throw new NotImplementedException();
         direction.y = v;
+    }
+
+    public Vector3 newPosition() {
+        return direction * Time.deltaTime * speed;
     }
 }
