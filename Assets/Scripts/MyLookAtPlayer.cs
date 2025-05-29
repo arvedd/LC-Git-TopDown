@@ -11,10 +11,10 @@ public class MyLookAtPlayer : MonoBehaviour
 
     void Update()
     {
-        lookAt();
+        LookAt();
     }
 
-    void lookAt()
+    void LookAt()
     {
         if (MyCode.GameManager.GetInstance().activePlayer != null)
         {

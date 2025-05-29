@@ -11,16 +11,16 @@ GameObject:
   - component: {fileID: 7260413079778974943}
   - component: {fileID: 874523166249266692}
   - component: {fileID: 4993745149141762323}
+  - component: {fileID: -1342742493240658521}
   - component: {fileID: 5510889871904455142}
   - component: {fileID: 7719238657786679554}
   - component: {fileID: 4427189255983027276}
-  - component: {fileID: -5216972269896070112}
   - component: {fileID: 5160703133835197677}
-  - component: {fileID: -1342742493240658521}
   - component: {fileID: 4556600558781553525}
+  - component: {fileID: 4761036535457943769}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -7592357483586913841, guid: be4292e672b80ae46b0e3922ca9682af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.07, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
@@ -117,6 +117,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &-1342742493240658521
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482610370000970963}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.0020290415, y: 0}
+  m_Radius: 0.028201759
 --- !u!114 &5510889871904455142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,19 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ecfbadf7b4fdf41bd819963f588623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5216972269896070112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2482610370000970963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a7fa4cdbdb1e54cacf86f53f09e8dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTravelDistance: 3
 --- !u!114 &5160703133835197677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,43 +219,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4761036535457943769}
+        m_TargetAssemblyTypeName: MyExplosionEffect, Assembly-CSharp
+        m_MethodName: showExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   targetTag: Player
---- !u!58 &-1342742493240658521
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2482610370000970963}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.035
 --- !u!114 &4556600558781553525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,5 +242,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ecfbadf7b4fdf41bd819963f588623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4761036535457943769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482610370000970963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969caa61d3c2d6a4da5e1a646bf448c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

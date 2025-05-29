@@ -4,6 +4,7 @@ using UnityEngine;
 public class MyMoveForward : MonoBehaviour
 {
     private MyMoveable moveable;
+    private Collider col;
 
     private void Awake()
     {
