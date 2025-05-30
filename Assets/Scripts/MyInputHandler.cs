@@ -7,6 +7,7 @@ public class MyInputHandler : ScriptableObject, MyCustomInput.IGameplayActions
 {
     private MyCustomInput input;
     public UnityAction<Vector3> OnSetDirectionAction;
+    public UnityAction OnPauseAction;
 
     private void OnEnable()
     {
@@ -17,7 +18,7 @@ public class MyInputHandler : ScriptableObject, MyCustomInput.IGameplayActions
 
         input.Gameplay.SetCallbacks(this);
         input.Gameplay.Enable();
-        
+
     }
 
     private void OnDisable()
@@ -37,5 +38,13 @@ public class MyInputHandler : ScriptableObject, MyCustomInput.IGameplayActions
             OnSetDirectionAction?.Invoke(context.ReadValue<Vector2>());
         }
 
+    }
+    
+    public void OnPause(InputAction.CallbackContext context) 
+    {
+        if (context.phase == InputActionPhase.Performed) 
+        {
+            OnPauseAction?.Invoke();
+        }
     }
 }

@@ -27,9 +27,10 @@ public class MyFireRateModifier : MonoBehaviour
             w.RemoveFireRateModifier(modifier);
         }
     }
-    
-    public void AddComponentToObject(GameObject go) 
-	{
+
+    public void AddComponentToObject(GameObject go)
+    {
         go.AddComponent<MyFireRateModifier>();
+        go.GetComponent<MyWeaponSetController>().WeaponUpgradeCheck();
     }
 }

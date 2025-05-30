@@ -1025,6 +1025,15 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""479cc053-d575-492c-9437-ac9f6f676bb0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1082,6 +1091,28 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""SetDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf4ca986-f47c-4f4c-b2c9-2f10f4d5f6c4"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d512a99-5fb9-4adb-b267-1499f2a33a4f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1175,6 +1206,7 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_SetDirection = m_Gameplay.FindAction("SetDirection", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@MyCustomInput()
@@ -1472,11 +1504,13 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_SetDirection;
+    private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
         private @MyCustomInput m_Wrapper;
         public GameplayActions(@MyCustomInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @SetDirection => m_Wrapper.m_Gameplay_SetDirection;
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1489,6 +1523,9 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
             @SetDirection.started += instance.OnSetDirection;
             @SetDirection.performed += instance.OnSetDirection;
             @SetDirection.canceled += instance.OnSetDirection;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1496,6 +1533,9 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
             @SetDirection.started -= instance.OnSetDirection;
             @SetDirection.performed -= instance.OnSetDirection;
             @SetDirection.canceled -= instance.OnSetDirection;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1586,5 +1626,6 @@ public partial class @MyCustomInput: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnSetDirection(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

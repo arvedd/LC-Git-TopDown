@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3996ffb7b6c5b24bb949b3ad709f085, type: 3}
   m_Name: Maximum
   m_EditorClassIdentifier: 
-  value: 10
-  defaultValue: 10
+  value: 100
+  defaultValue: 100
   resetOnEnable: 0
