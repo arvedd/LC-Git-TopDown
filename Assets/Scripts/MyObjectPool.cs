@@ -21,7 +21,8 @@ public class MyObjectPool : MonoBehaviour
         }
     }
 
-    public static MyObjectPool GetInstance() {
+    public static MyObjectPool GetInstance()
+    {
         return instance;
     }
     void Start()
@@ -51,5 +52,13 @@ public class MyObjectPool : MonoBehaviour
             }
         }
         return null;
+    }
+    
+    public void deactivateAllObject() 
+    {
+        foreach(MyPoolObject po in poolObjects) 
+        {
+            po.deactivate();
+        }
     }
 }

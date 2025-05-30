@@ -686,7 +686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6404584840529803795, guid: 5446093291c63be4b8fbae5357bc7888, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1441529404169611457, guid: 5446093291c63be4b8fbae5357bc7888, type: 3}
       propertyPath: m_Enabled
@@ -2542,7 +2542,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1260088491}
         m_TargetAssemblyTypeName: MyCode.GameManager, Assembly-CSharp
-        m_MethodName: pauseGame
+        m_MethodName: resumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2554,7 +2554,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1950666297}
         m_TargetAssemblyTypeName: MyMenuUI, Assembly-CSharp
-        m_MethodName: pauseGame
+        m_MethodName: resumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2804,6 +2804,10 @@ MonoBehaviour:
   activePlayer: {fileID: 0}
   playerPrefab: {fileID: 7833100502165100826, guid: 5446093291c63be4b8fbae5357bc7888, type: 3}
   isPlaying: 0
+  life: {fileID: 11400000, guid: 6449903c478e10c40827101bb50bb1bc, type: 2}
+  coin: {fileID: 11400000, guid: 2d2fc4d82fb5bba4a9641be89a73716b, type: 2}
+  spawner: {fileID: 2043653346}
+  items: []
 --- !u!1 &1347153383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,7 +3608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Shooter
+  m_text: Space Wars
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d61e4481ffbceca418c01232445a0a02, type: 2}
   m_sharedMaterial: {fileID: -2313656741288375051, guid: d61e4481ffbceca418c01232445a0a02, type: 2}
@@ -4280,13 +4284,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1950666297}
+        m_TargetAssemblyTypeName: MyMenuUI, Assembly-CSharp
+        m_MethodName: retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4825,7 +4829,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1260088491}
         m_TargetAssemblyTypeName: MyCode.GameManager, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5586,7 +5590,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2232be6780434b14aa42831e71b95f6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6115,10 +6119,6 @@ PrefabInstance:
     - target: {fileID: 3914639767438790056, guid: 7c1c503c75e905c4289a0e4c6c275e12, type: 3}
       propertyPath: m_FlipY
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4144956281383696171, guid: 7c1c503c75e905c4289a0e4c6c275e12, type: 3}
-      propertyPath: maxTravelDistance
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5330132193238325571, guid: 7c1c503c75e905c4289a0e4c6c275e12, type: 3}
       propertyPath: m_Name

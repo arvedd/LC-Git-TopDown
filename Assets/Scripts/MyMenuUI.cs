@@ -7,6 +7,11 @@ public class MyMenuUI : MonoBehaviour
     public GameObject gameOverMenu;
     public MyInputHandler inputHandler;
 
+    void Start()
+    {
+        MyCode.GameManager.GetInstance().OnGameOverAction += gameOver;
+    }
+
     public void startGame()
     {
         mainMenu.SetActive(false);
@@ -33,14 +38,23 @@ public class MyMenuUI : MonoBehaviour
     {
         gameOverMenu.SetActive(true);
     }
-    
-    private void OnEnable() 
-        {
-            inputHandler.OnPauseAction += pauseGame;
-        }
 
-        private void OnDisable() 
-        {
-            inputHandler.OnPauseAction -= pauseGame;
-        }
+    public void retry() 
+    {
+        gameOverMenu.SetActive(false);
+        mainMenu.SetActive(true);
+        MyCode.GameManager.GetInstance().retry();
+    }
+
+    private void OnEnable()
+    {
+        inputHandler.OnPauseAction += pauseGame;
+    }
+
+    private void OnDisable()
+    {
+        inputHandler.OnPauseAction -= pauseGame;
+    }
+        
+        
 }

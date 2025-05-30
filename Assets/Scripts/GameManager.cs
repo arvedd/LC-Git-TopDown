@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,11 @@ namespace MyCode
         public GameObject playerPrefab;
         public UnityAction OnGameOverAction;
         public bool isPlaying;
+        public MyScriptableInteger life;
+        public MyScriptableInteger coin;
+        public MyEnemySpawner spawner;
+
+        public List<GameObject> items;
 
         private void Awake()
         {
@@ -65,11 +71,34 @@ namespace MyCode
             isPlaying = false;
             Time.timeScale = 0;
         }
-        
-        internal void gameOver() 
+
+        internal void gameOver()
         {
             isPlaying = false;
             OnGameOverAction?.Invoke();
+        }
+
+        internal void retry()
+        {
+            life.Reset();
+            coin.Reset();
+            spawner.clearEnemies();
+            MyObjectPool.GetInstance().deactivateAllObject();
+            clearAllItem();
+        }
+        
+        internal void addItem(GameObject gameObject) 
+        {
+            items.Add(gameObject);
+        }
+
+        public void clearAllItem() 
+        {
+            foreach(GameObject go in items) 
+            {
+                Destroy(go);
+            }
+            items.Clear();
         }
     }
 }

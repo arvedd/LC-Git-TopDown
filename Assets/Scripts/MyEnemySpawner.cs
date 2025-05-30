@@ -27,10 +27,10 @@ public class MyEnemySpawner : MonoBehaviour
             {
                 Spawn();
                 yield return new WaitForSeconds(delay);
-            } 
+            }
             else
             {
-                 yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(delay);
             }
         }
     }
@@ -67,5 +67,13 @@ public class MyEnemySpawner : MonoBehaviour
         }
 
         return null;
+    }
+    
+    public void clearEnemies() 
+    {
+        foreach(GameObject go in enemyList) {
+            Destroy(go);
+        }
+        enemyList.Clear();
     }
 }

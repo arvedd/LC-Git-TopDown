@@ -19,7 +19,12 @@ public class MyContainItems : MonoBehaviour
     public void SpawnItemOnDeath()
     {
         GameObject go = getItem();
-        Instantiate(go);
+        //Instantiate(go);
+
+        if (go != null) 
+        {
+            MyCode.GameManager.GetInstance().addItem(Instantiate(go, transform.position, Quaternion.identity));
+        }
     }
 
     private GameObject getItem()
