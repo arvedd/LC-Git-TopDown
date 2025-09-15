@@ -15,13 +15,13 @@ Jagat Wars is a 2D top-down shooter that takes players into intense battles on t
   </tr>
   <tr>
     <td><b>Battle System</b></td>
-    <td>Handling autoshoot for player and enemy, explosive when die, player weapon, movement, coin and item for player.</td>
-    <td><code>Myautoshoot.cs</code>, <code>MyExplosionEffect.cs</code>, <code>MyMoveable.cs</code>, <code>MyPlayerController.cs</code></td>
+    <td>Handling autoshoot for player and enemy, enemy spawner, explosive when die, player weapon, movement, coin and item for player.</td>
+    <td><code>Myautoshoot.cs</code>, <code>MyExplosionEffect.cs</code>, <code>MyMoveable.cs</code>, <code>MyPlayerController.cs</code>, <code>MyUpgradeWeapon</code></td>
   </tr>
   <tr>
-<!--     <td><b>Ball System</b></td>
-    <td>Manages the ball's movement.</td>
-    <td><code>BallControl.cs</code></td> -->
+    <td><b>Background System</b></td>
+    <td>Handling backgorund for game by autoscrollling.</td>
+    <td><code>MyScrollBackground.cs</code></td>
   </tr>
   <tr>
 <!--     <td><b>Scoring System</b></td>
