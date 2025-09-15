@@ -15,23 +15,23 @@ Jagat Wars is a 2D top-down shooter that takes players into intense battles on t
   </tr>
   <tr>
     <td><b>Battle System</b></td>
-    <td>Handling autoshoot for player and enemy, enemy spawner, explosive when die, player weapon, movement, coin and item for player.</td>
+    <td>Handling autoshoot for player and enemy, enemy spawner, explosive when die, player weapon, movement.</td>
     <td><code>Myautoshoot.cs</code>, <code>MyExplosionEffect.cs</code>, <code>MyMoveable.cs</code>, <code>MyPlayerController.cs</code>, <code>MyUpgradeWeapon</code></td>
   </tr>
   <tr>
-    <td><b>Background System</b></td>
-    <td>Handling backgorund for game by autoscrollling.</td>
-    <td><code>MyScrollBackground.cs</code></td>
+    <td><b>UI</b></td>
+    <td>Handling backgorund for game by autoscrollling, UI for coin and health.</td>
+    <td><code>MyScrollBackground.cs</code>, <code>MyLifeUI.cs</code>, <code>MyCoinUI.cs</code></td>
   </tr>
   <tr>
-<!--     <td><b>Scoring System</b></td>
-    <td>Manages scoring when ball hit a collider behind each player.</td>
-    <td><code>ScoreZone.cs</code></td> -->
+    <td><b>Health and coin System</b></td>
+    <td>Manage health and coin for player, when player get hit and destroy enemy.</td>
+    <td><code>MyContainItems.cs</code></td>
   </tr>
   <tr>
-<!--     <td><b>Game UI</b></td>
-    <td>Controls scoring UI for the game.</td>
-    <td><code>GameManager.cs</code></td> -->
+    <td><b>Enemy</b></td>
+    <td>Manage enemy spawn.</td>
+    <td><code>EnemySpawner.cs</code></td>
   </tr>
 </table>
 
