@@ -10,6 +10,10 @@ The game was built using Unity Engine. Play the game -.
 Ngakan Nyoman Arya Vedantha (Game Programmer)
 <br>
 
+## Built Time
+This project was built for 6 days.
+<br>
+
 ---
 
 ## Features & Scripts 
