@@ -48,6 +48,16 @@ This project was built for 6 days.
 
 ---
 
+## Game controls
+
+The following controls are bound in-game, for gameplay and testing.
+
+| Key Binding       | Function          |
+| ----------------- | ----------------- |
+| W,A,S,D           | Standard movement |
+
+<br>
+
 
 ## Project Goal
 
