@@ -27,22 +27,22 @@ This project was built for 6 days.
   <tr>
     <td><b>Battle System</b></td>
     <td>Handling autoshoot for player and enemy, enemy spawner, explosive when die, player weapon, movement.</td>
-    <td><code>Myautoshoot.cs</code>, <code>MyExplosionEffect.cs</code>, <code>MyMoveable.cs</code>, <code>MyPlayerController.cs</code>, <code>MyUpgradeWeapon</code></td>
+    <td><code>Autoshoot.cs</code>, <code>ExplosionEffect.cs</code>, <code>Moveable.cs</code>, <code>PlayerController.cs</code>, <code>UpgradeWeapon</code></td>
   </tr>
   <tr>
     <td><b>UI</b></td>
     <td>Handling backgorund for game by autoscrollling, UI for coin and health.</td>
-    <td><code>MyScrollBackground.cs</code>, <code>MyLifeUI.cs</code>, <code>MyCoinUI.cs</code></td>
+    <td><code>ScrollBackground.cs</code>, <code>LifeUI.cs</code>, <code>CoinUI.cs</code></td>
   </tr>
   <tr>
     <td><b>Health and coin System</b></td>
     <td>Manage health and coin for player, when player get hit and destroy enemy.</td>
-    <td><code>MyContainItems.cs</code></td>
+    <td><code>ContainItems.cs</code></td>
   </tr>
   <tr>
     <td><b>Enemy</b></td>
-    <td>Manage enemy spawn.</td>
-    <td><code>EnemySpawner.cs</code></td>
+    <td>Manage enemy such as spawner and making enemy always facing player.</td>
+    <td><code>EnemySpawner.cs</code>, <code>LookAtPlayer.cs</code></td>
   </tr>
 </table>
 
