@@ -2,10 +2,6 @@
 
 Jagat Wars is a 2D top-down shooter that takes players into intense battles on the sky. You pilot a combat spaceship, tasked with taking down waves of enemy ships. With fast-paced shooting mechanics, agile maneuvers, and increasingly challenging enemies, the game tests your reflexes, precision, and strategy as you fight for survival and dominance in sky.
 
-## Play Game
-The game was built using Unity Engine. Play the game -. 
-<br>
-
 ## Developer
 Ngakan Nyoman Arya Vedantha (Game Programmer)
 <br>
